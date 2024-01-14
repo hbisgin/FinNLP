@@ -20,7 +20,7 @@ class Finnhub_Date_Range(News_Downloader):
     def download_date_range_stock(self, start_date, end_date, stock = "AAPL"):
         self.date_list = pd.date_range(start_date,end_date)
         self.dataframe = pd.DataFrame()
-
+        self.dataframe['datetime'] = ""
         days_each_time = 4
         date_list = self.date_list
         # cal total lenth
