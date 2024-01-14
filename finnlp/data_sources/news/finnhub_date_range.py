@@ -51,7 +51,7 @@ class Finnhub_Date_Range(News_Downloader):
     def gather_content(self, delay = 0.01):
         pbar = tqdm(total = self.dataframe.shape[0], desc= "Gathering news contents")
         self.dataframe["content"] = self.dataframe.apply(lambda x:self._gather_content_apply(x, pbar, delay), axis = 1)
-
+        self.dataframe["headline"] = ""
     def _gather_content_apply(self,x, pbar, delay = 0.01):
         time.sleep(delay)
         url = x.url
